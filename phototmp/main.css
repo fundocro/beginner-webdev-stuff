@@ -1,0 +1,39 @@
+﻿#topbar{
+	display:inline-block;
+	height:100px;
+	width:100%;
+	border-bottom: 1px solid black;
+}
+#topbar .nav{
+	position:fixed;
+	margin-left:10%;
+	z-index:100;
+}
+#topbar .nav li{
+	display:inline-block;
+}
+
+#contact {
+	background: #2f2f2f;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#contact p {
+	color: white;
+}
+
+#contact h5 {
+	color: white;
+}
+
+
+#contact t {
+	font-weight: 700;
+}
+
+#contact i {
+	padding-right: 8px;
+	color: #1abc9c;
+}
+

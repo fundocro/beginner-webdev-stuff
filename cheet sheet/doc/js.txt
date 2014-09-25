@@ -1,0 +1,1655 @@
+JavaScript  (JS)
+What can we use JavaScript for? 
+—  make websites respond to user interaction
+—  build apps and games (e.g. blackjack)
+—  access information on the Internet (e.g. find out the top trending words on Twitter by topic)
+—  organize and present data (e.g. automate spreadsheet work; data visualization)
+Data Types: Numbers , Strings, Booleans,Comparisons
+42, 190.12334
+"Ryan", "4" and "What is your name?"
+Boolean: TRUE / FALSE
+		"I'm coding like a champ!".length > 10 //true
+Comparisons:
+		List of comparison operators: 
+ > Greater than
+ < Less than
+ <= Less than or equal to
+ >= Greater than or equal to
+ === Equal to / chek if things are real!
+ !== Not equal to
+One really important thing to note is that any time comparisons are made, a Boolean value is returned.
+Comment: 
+// This is a comment that the computer will ignore. 
+1. ( ): control order of operations
+2. * and /: multiplication and division
+3. - and +: subtraction and addition
+length
+"goran".length     // 5
+"goran".length * 5   //25
+"test page 123".length   // 13 Counts spaces also and ewry character!!
+confirm
+confirm("I feal great") ; // create pop up JS window telling you I feal great 
+prompt
+prompt("Where are you from?") //Works like Input on python , pops up the box in wich you anwser the question . result is dispayed in EDITOR.
+toUpperCase(); 
+toLowerCase(); 
+"my name".toUpperCase(); // Returns "MY NAME"
+"MY NAME".toLowerCase(); // Returns "my name"
+var something = prompt(" stores anwser in variable as a UPPER CASE LETTERS").toUpperCase();
+var something = prompt(" stores anwser in variable as a Lower CASE LETTERS").toLowerCase();
+console.log()
+console.log() is eqvivqlent to PRINT command :)
+console.log("Hello WORLD") // "Hello WORLD"
+console.log(2*5) // 10
+////
+var myObject = {
+	name : goran
+}
+typeof:
+console.log(typeof myObject) // prints the type, cold be object, variable, number and so on....
+hasOwnProperty:
+console.log( myObj.hasOwnProperty('name') );// return TRUE
+cheks if property name is assingened to object
+=====
+var languages = {
+    english: "Hello!",
+    french: "Bonjour!",
+    notALanguage: 4,
+    spanish: "Hola!"
+};
+
+// print hello in the 3 different languages
+for(var i in languages){
+    if(typeof languages[i]==="string"){
+        console.log(languages[i]);
+    }
+} 
+====:
+var suitcase = {
+    shirt: "Hawaiian"
+};
+
+if( suitcase.hasOwnProperty("shorts") ) {// cheking if object have propertie shorts inside
+    console.log(suitcase.shorts);
+}else{
+    suitcase.shorts = "test";
+    console.log(suitcase.shorts);
+} 
+========
+function StudentReport() {    // if we use var then is PRIVATE
+    var grade1 = 4;
+    var grade2 = 2;
+    var grade3 = 1;
+    this.getGPA = function() {
+        return (grade1 + grade2 + grade3) / 3;
+    };
+}
+
+var myStudentReport = new StudentReport();
+
+for(var x in myStudentReport) {
+    if(typeof myStudentReport[x] !== "function") {
+        console.log("Muahaha! " + myStudentReport[x]);
+    }
+}
+
+console.log("Your overall GPA is " + myStudentReport.getGPA());
+=============================================================
+
+IF Statement:       CONDITIONALS 
+
+if ( 100 > 2 )      // IF Statement is FALSE  ! IT SKIPS CODE IN CURLEY BRACES{ }!!
+{                          // IF Statement is TRUE  ! EXECUTES BOUTH LINES OF CODE
+    console.log("You are good at math!");
+}
+console.log("Just letting you know: your program got to line 6");
+============================================================
+IF  Else Statement :
+if  the condition was TRUE then will run only FIRST COMMAND
+if ( 100 < 2) {        //FALSE (EXECUTES COMMAND AFTER ELSE! ,skips first comand)
+    alert("Let's go down the first road!");    // RUNS IF IS TRUE ONLY
+}
+else {       // EXecutes if the IF line ABOVE is FALSE 
+    // What should we do if the condition is false? Fill in here:
+    console.log("I will go around");
+}
+==================
+BE CAREFUL OF CORECT SYNTAX:
+if ("goran".length === 5){
+    console.log("I finished my first course!");
+} else {
+    console.log("I failed");
+}
+=============================================================
+Math and the modulo
+When % is placed between two numbers, the computer will divide the first number by the second, and then return the remainder of that division. 
+console.log(14%3)     //2  14/3 = 4.6 /     4*3=12 /   14-12 = 2
+console.log(99%8)   //3  8*12=96   ...99-96=()
+console.log(11%3)   //3
+
+Substrings
+X is choping always one before! Y is the corect countS starting at 1,2,3,4.... 
+"laptop".substring(3,5) //  to
+"some word".substring(x, y) where x is where you start chopping and y is where you finish chopping the original string. 
+"hello". substring(0, 2); // he
+. First 3 letters of "Batman"
+"Batman".substring(0,3)
+"wonderful day".substring(3,7) //  derf
+
+Variables
+To do more complex coding, we need a way to 'save' the values from our coding. We do this by defining a variable 
+Remember, you do NOT have to use var when changing the value of a variable that already exists. 
+var myAge = 27;
+console.log(myAge); // 27
+===
+// On line 2, declare a variable myName and give it your name.
+var myName = "Goran"
+// On line 4, use console.log to print out the myName variable.
+console.log(myName) // Goran
+// On line 7, change the value of myName to be just the first 2 
+// letters of your name.
+myName = myName.substring(0,2)
+// On line 9, use console.log to print out the myName variable.
+console.log(myName) // Go
+=======some code ... 
+var question = prompt("What is your age"); // asks you whats your age
+if( question > 30)
+{console.log("Ok that is nice !");}
+else{
+	consloe.log("You are young");
+}
+===============Function syntax=================
+Think of a function as having four parts.
+01. Declare the function using var, and then give it a name. The name should begin with a lowercase letter and the convention is to use lowerCamelCase where each word (except the first) begins with a capital letter.
+02. Then you must use the function keyword to tell the computer that you are making a function.
+03. The bit in the parentheses is called the parameter. Think of it as a placeholder word that we give a specific value when we call the function. See the hint for more.
+04. Then write your block of reusable code between { }. Every line of code in this block must end with a ;.
+=========BASIC FUNCTION========
+var greeting = function (name) {
+    console.log("Great to see you," + " " + name) ;
+} ;              /dont forget semicolon
+greeting("silvia") ;              //c alling function 
+===========================================
+01. The var keyword declares the
+function.
+02. var is always followed by a name. 
+03.  The keyword function tells the computer it is a function and not something else.
+04.  Parameters go in the parentheses. The computer will look out for it in the code block.
+05.  The code block is the reusable code that is between the curly brackets { }. Each line of code inside { } must end with a semi-colon.
+06.  The entire function ends with a semi-colon.
+
+To use the function, we call the function by just typing the function's name, and putting a parameter value inside parentheses after it. The computer will run the reusable code with the specific parameter value substituted into the code.
+=========FUNCTION with IF / ELSE========
+var isEven = function(number) {
+    if(number%2===0){
+        return true;
+    }else{
+        return false;
+    }
+};
+=========
+var creditCheck = function(income){
+    if(income >= 100 ){return "You earn a lot of money! You qualify for a credit card."}
+    else{
+        return "Alas you do not qualify for a credit card. Capitalism is cruel like that."
+    }
+};
+creditCheck(75);
+creditCheck(125);
+creditCheck(100);
+=====FUNCTION WITH TWO PARAMETERS========
+var perimeterBox = function(length,width){
+    return length*2+width*2 ;
+} ;
+perimeterBox(3,4) ; //14
+
+====================Global vs Local Variables=================
+var my_number = 7; //this has global scope 
+var timesTwo = function(number) {
+    var my_number = number * 2; // LOCAL scope
+    console.log("Inside the function my_number is: ");
+    console.log(my_number);
+}; 
+timesTwo(7); //14
+console.log("Outside the function my_number is: ");
+console.log(my_number); //7
+===============RETURN=================
+Sometimes, we just want it to return a value and not print it. We can then use that value (ie. the output from the function) in other code by using return.
+When we call a function, its return value is just the result from running the function. That value can then be used just like any other value in JavaScript!
+
+The return keyword simply gives the programmer back the value that comes out of the function. So the function runs, and when the return keyword is used, the function will immediately stop running and return the value.
+Four ways to use return
+
+a. return a variable's value if the variable has been declared inside the function
+ b. return the parameter
+ c. if the parameter is a number, do math with that parameter and you can return the value
+ d. if the parameter is a string, use keywords like .length or .substring() and you can return the value
+===
+var quarter = function(number){
+	return number/4
+};
+
+if (quarter(36) % 3 === 0 ) {
+  console.log("The statement is true"); // prints this one
+} else {
+  console.log("The statement is false");
+}
+=========IF  /ELSE IF ===================
+It simply states that if this condition is true , do this , else do something else ( or nothing ) . It occurs in varied forms. 
+Syntax
+// Form : Single If=========================================
+if (condition) {
+  // code that runs if the condition is true
+}
+Example
+if (answer === 42) {
+  console.log('Told you so!');
+}
+====== else 
+ A fallback to an if statement. This will only get executed if the previous statement did not. 
+Syntax
+// If the condition is true, statement1 will be executed.
+// Otherwise, statement2 will be executed.
+
+if (condition) {
+  // statement1: code that runs if condition is true
+} else {
+  // statement2: code that runs if condition is false
+}
+Example
+if (gender == "male") {
+  console.log("Hello, sir!");
+} else {
+  console.log("Hello, ma'am!");
+}
+==== else if
+This is like an else statement, but with its own condition. It will only run if its condition is true, and the previous statement's condition was false.
+Syntax
+// Form : else if . If the condition is true, statement1 will be executed. Otherwise, condition2 is checked . if it is true , then statement2 is executed. Else , if nothing is true , statement3 is executed.
+===
+if (condition1) {
+  statement1;        //if false , cheks statement 2/if true executes 2
+} else if (condition2) {
+  statement2;   // if false does statement 3/if true executes
+} else {
+  statement3;
+}
+=========================isNaN==================
+If you call isNaN on something, it checks to see if that thing is Not a Number. So:
+isNaN('berry') // => true
+isNaN(NaN) // => true
+isNaN(undefined) // => true
+isNaN(42);  // => false
+===
+var isEven = function(number) {
+    if(number%2===0){
+        return true;
+    } else if(isNaN(number)){ //if true will do return .. .. 
+        return "That shit is not a number";
+    } else {
+        return false;
+    }
+};
+=========FOR LOOPS==========================
+for(var i = start; i < end; i++){
+    // Do something
+}
+for (var counter = 1; counter < 11; counter++) {
+	console.log(counter); //1 2 3 45 67 89 10
+}
+for (var i = 5; i < 11; i = i + 1) {
+	console.log(i);    //5 6 7 8 9 10
+}
+
+Rules to learn
+
+a. A more efficient way to code to increment up by 1 is to write i++.
+b. We decrement down by 1 by writing i--.
+c. We can increment up by any value by writing i += x, where x is how much we want to increment up by. e.g., i += 3 counts up by 3s.
+d. We can decrement down by any value by writing i -= x. (See the Hint for more.)
+
+for (var i = 5; i < 51; i+=5) {
+	console.log(i); 
+}
+for (var i =10; i >= 0; i--) {
+	console.log(i);
+}
+=========FOR IN LOOPS========================
+var list = function(someObject) {
+   for(var key in someObject) {  
+        console.log(key); 
+}
+};
+==========================Arrays=============================
+a. store lists of data
+b. can store different data types at the same time
+c. are ordered so the position of each piece of data is fixed
+
+Example:
+var names = ["Mao","Gandhi","Mandela"];
+var sizes = [4, 6, 3, 2, 1, 9];
+var mixed = [34, "candy", "blue", 11];
+ADDING ITEM TO ARRAY 1:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+ fruits.push("Kiwi")
+output > Banana,Orange,Apple,Mango,Kiwi
+PRINTING OUT =====
+var junkData = ["Eddie Murphy", 49, "peanuts", 31];
+console.log(junkData[3]);   //  31
+ARRAYS  AND FOR LOOP =====
+var cities = ["Melbourne", "Amman", "Helsinki", "NYC","Toronto","Zagreb"];
+for (var i = 0; i < cities.length; i++) {
+    console.log("I would like to visit " + cities[i]);
+}
+=============================
+
+Add items to the array 2:
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+ fruits.splice(2,0,"Lemon","Kiwi"); 
+The result of fruits will be:
+ Banana,Orange,Lemon,Kiwi,Apple,Mango
+=======
+===ARRYS + FOR + IF
+var array = [3, 6, 2, 56, 32, 5, 89, 32];
+var largest = 0;
+for(var i=0; i<array.length; i++){
+    if(array[i] > largest){
+        largest = array[i];
+}}
+console.log(largest); // 89
+
+You can treat a string like an array of characters. For instance, you know that
+var myArray = ['hello', 'world'];
+myArray[0]; // equals 'hello'
+But this also works on strings!
+var myName = 'Eric';
+myName[0] // equals 'E'
+==ecample
+text = "ja two thre four five Goran seven Goran nine Goran";
+myName = "Goran";
+hits = [];
+for(var x = 0; x <text.length;x++){
+    if(text[x]==="G"){
+        for(var y = x; y<myName.length + x; y++){
+            hits.push(text[y]);
+        }
+    }
+}
+if(hits === 0){
+    console.log("Your name wasn't found!");
+}else{
+    console.log(hits);
+} // [ 'G', 'o', 'r', 'a', 'n', 'G', 'o', 'r', 'a', 'n', 'G', 'o', 'r', 'a', 'n' ]
+=========heterogenous arrays
+array = [33,true, "kita"]  // like all mixed
+======TWO DIMENSIONAL ARRAY
+var twoDimensional = [[1, 1], [1, 1]];
+==========Jagged arrays
+jagged = [[3,4,5],[3,44],33333]
+=====We can also put oBJECT IN TO AN ARRAY=========================
+var object = new Object();
+object.name = "test";
+object.name2 = "test2";
+myArray = [44,true,"dick",[object],88,55];
+
+
+=======While Loops==============
+You use while loops, if you don't know how often you'll loop.
+var x = 0; // TRUE
+while (x < 5) { // will contimue until FALSE when x = 5 it stop
+  console.log(x); // Prints numbers from 0 to 4
+  x++; // sets counter +1, we can use also x += 1
+}
+======
+var x = 0;
+var loop = function(){
+	while( x< 3){ // seting a condition here (while condition is TRUE do code below)
+		console.log("I'm looping!"); // 3 times
+		x++; // wold be the same as  x+=1
+	}
+};
+loop();
+output:
+I'm looping!
+I'm looping!
+I'm looping!
+===========
+var x = true; // Good example
+var soloLoop = function(){
+  while(x){
+      console.log("Looped once!");
+      x = false;
+  }
+};
+soloLoop();
+=================================
+When to 'while' and when to 'for'
+FOR loop is when we know the count number .
+WHILE loop is when we don't know the count number .
+
+As we mentioned, for loops are great for doing the same task over and over when you know ahead of time how many times you'll have to repeat the loop. On the other hand, while loops are ideal when you have to loop, but you don't know ahead of time how many times you'll need to loop.
+As you saw, however, you can combine a while loop with a counter variable to do the same kind of work a for loop does. In these cases, it's often a matter of preference.
+=================================================================
+The 'do' / 'while' loop
+
+Sometimes you want to make sure your loop runs at least one time no matter what. When this is the case, you want a modified while loop called a do/while loop.
+
+This loop says: "Hey! Do this thing one time, then check the condition to see if we should keep looping." After that, it's just like a normal while: the loop will continue so long as the condition being evaluated is true.
+loopCondition = false;  // IT starts as a false , that allows it ot be looped only once
+
+do {
+	console.log("I'm gonna stop looping 'cause my condition is " + String(loopCondition) + "!");	
+} while (loopCondition); //it will not continue becouse is FALSE
+======
+var getToDaChoppa = function(){ // hre we presume as TRUE
+  do{
+      var x = console.log("I love you");
+  } while( false);
+
+};
+getToDaChoppa();
+==============Switch==========================
+ it might be annoying to type else if () ten times. That's why JavaScript has the switch statement!
+switch allows you to preset a number of options (called cases), then check an expression to see if it matches any of them. If there's a match, the program will perform the action for the matching case; if there's no match, it can execute a default option.
+===
+var lunch = prompt("What do you want for lunch?","Type your lunch choice here");
+
+switch(lunch){
+  case 'sandwich':
+    console.log("Sure thing! One sandwich, coming up.");
+    break;
+  case 'soup':
+    console.log("Got it! Tomato's my favorite.");
+    break;
+  case 'salad':
+    console.log("Sounds good! How about a caesar salad?");
+    break;
+default:   //it wil execute this if no match is found
+    console.log("Huh! I'm not sure what " + lunch + " is. How does a sandwich sound?");
+}
+=========Logical Operators======================
+JavaScript has three: and (&&), or (||) , and not (!).
+var iLoveJavaScript = true;
+var iLoveLearning = true;
+
+if(iLoveJavaScript && iLoveLearning) {
+  // if iLoveJavaScript AND iLoveLearning:
+  console.log("Awesome! Let's keep learning!");
+} else if( ! (iLoveJavaScript || iLoveLearning)) {
+  // if NOT iLoveJavaScript OR iLoveLearning:
+  console.log("Let's see if we can change your mind.");
+} else {
+  console.log("You only like one but not the other? We'll work on it.");
+}
+===AND && //ALL IS FALSE EXCEPT BOUTH IS TRUE
+true && true // => true
+true && false // => false
+false && true // => false
+false && false // => false
+
+
+==OR ||  //ALL IS TRUE EXCEPT IF BOUTH IS FALSE!
+true || true // => true
+true || false // => true
+false || true // => true
+false || false // => false
+
+==NOT   !  // THIS COVERTS TRUE TO FALSE AND AROUND 
+It makes true expressions false, and vice-versa.
+!true // => false
+!false // => true
+===
+var programming = false;
+var happy = function() {
+  if (!programming){  // presenting variable programming as TRUE using !
+      return true; // returnes TRUE
+  }else{
+      return false;
+  }
+};
+
+
+====================OBJECTS=================
+
+
+
+
+An object is like an array in this way, except its keys can be variables and strings, not just numbers.
+Objects are just collections of information (keys and values) between curly braces, like this:
+var myObject = {
+    key: value,
+    key: value,
+    key: value
+};
+Each piece of information we include in an object is known as a property. Think of a property like a category label that belongs to some object. When creating an object, each property has a name, followed by : and then the value of that property. For example, if we want Bob's object to show he is 34, we'd type in age: 34.
+
+age is the property, and 34 is the value of this property. When we have more than one property, they are separated by commas. The last property does not end with a comma.
+
+OBJECTS
+Objects provide us with a way to represent real-world or virtual things. We can do this by storing information inside the object's properties. There are two basic ways to make objects:
+
+
+=====Creating a new object
+FISRST WAY IS object literal notation:
+
+Literal notation is just creating an object with curly braces, like this:
+var myObj = {
+    type: 'fancy',
+    disposition: 'sunny'
+};
+var emptyObj = {};
+
+
+
+SECOND WAY IS object constructor:
+
+
+When you use the constructor, the syntax looks like this:
+var myObj = new Object();
+
+This tells JavaScript: "I want you to make me a new thing, and I want that thing to be an Object.
+
+You can add keys to your object after you've created it in two ways:
+myObj["name"] = "Charlie";
+myObj.name = "Charlie";
+Both are correct, and the second is shorthand for the first. 
+===
+var me = new Object();
+me.name = "Goran";
+me.age  = 27;
+or
+me["name"] = "Goran"
+me["age"] = 27
+=============Yust example for using bRACKETS
+var james = {
+    job: "programmer",
+    married: false
+};
+var aProperty = ["job"];
+console.log(james[aProperty]);
+=====Constructor 2
+Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
+===
+function Person(job, married) {
+    this.job = job;
+    this.married = married;
+}
+
+// create a "gabby" object using the Person constructor!
+var gabby = new Person("student", true);
+===
+=====ARRAY CONTAINING OBJECT=============================
+var object = new Object();
+object.name = "test";
+object.name2 = "test2";
+myArray = [44,true,"dick",[object],88,55];
+===========
+var object = {
+    name:"Goran",
+    age:55
+};
+newArray =[[22,55,44],[[object],"sweet"]];
+======OBJECTS CONTAINING ARRAY
+var myObject = {
+  name: 'Eduardo',
+  type: 'Most excellent',
+  // Add your code here!
+  interests:["credits","vibrators"]
+};
+====OBJECT CONTAINING OBJECT +++++++++++++++++++
+
+var friends = {               // Creating a main OBJECT / object friends contains 2 					//more objects : bill and steve
+
+    bill: {        // Adding bill (bill and steve are KEYS inside main object friends)
+        firstName:"Bill",
+        lastName:"Gates",
+        number:"682 444 555",
+        address:['Kralja Tomislava','Kotoriba','CRO','40329']
+    } ,
+    steve: {                  //bill and steve are also objects within main object
+        firstName:"Steve",
+        lastName:"Jobs",
+        number:"682 666 666",
+        address:['Marsala Tita','Beograd','SRB','14000']
+    } ,
+};       //END OF MAIN OBJECT
+
+var list = function(someObject) {
+   for(var key in someObject) {  // using FOR IN LOOP SYSTEM
+                                                    // Insted of key it can be enything else   
+        console.log(key); 
+// Here we specify that we want only KEYS to be listed not ewrthing
+   }
+}; //END OF LIST FUNCTION
+
+var search = function(name){
+  for(var x in friends){
+      if(friends[x].firstName === name){
+          console.log(friends[x]);
+          return friends[x];
+      }
+  }
+}; //END OF SEARCH FUNCTION
+search("Steve");    // STARTING ALL
+
+=====Accessing Properties inside an Object========
+Properties are like variables that belong to an object, and are used to hold pieces of information. Properties can be accessed in two ways:
+******
+Dot notation, with 
+ObjectName.PropertyName
+
+Bracket notation, with 
+ObjectName["PropertyName"] 
+(don't forget the quotes!)
+*******
+===========FIRST WAY=============
+var bob = {
+  name: "Bob Smith",
+  age: 30
+};
+var susan = {
+  name: "Susan Jordan",
+  age: 25
+};
+// here we save Bob's information
+var name1 = bob.name;
+var age1 = bob.age;
+// finish this code by saving Susan's information
+var name2 =susan.name;
+var age2 = susan.age;
+===========SECOND WAY=============
+var dog = {
+  species: "greyhound",
+  weight: 60,
+  age: 4
+};
+var species = dog["species"];
+var weight = dog["weight"];
+var age = dog["age"];
+
+
+===============METHODS==========================    like function inside object      
+(similiar to functions)
+
+Methods are like functions that are associated with a particular object.
+
+They are especially helpful when you want to either:
+01. Update the object properties 
+02. Calculate something based on an object's properties.
+We can think of properties as variables associated with an object. Similarly, a method is just like a function associated with an object.
+===(Adding Method to our OBJECT!! )
+var bob = new Object();
+bob.name = "Bob Smith";
+bob.age = 30;
+// this time we have added a method, setAge
+bob.setAge = function (newAge){
+ bob.age = newAge;
+};
+// here we set bob's age to 40
+bob.setAge(40);
+=== POWER OF USING METHODS :
+1.   They can be used to change object property values.
+2.   They can be used to make calculations based on object properties. Functions can only use parameters as an input, but methods can make calculations with object properties. 
+=================================================
+var bob = new Object();
+bob.age = 30;
+// this time we have added a method, setAge
+bob.setAge = function (newAge){
+  bob.age = newAge;
+};
+
+bob.getYearOfBirth = function () {
+  return 2013 - bob.age;
+};
+console.log( bob.getYearOfBirth() );
+===
+var james = {
+    job: "programmer",
+    married: false,
+    sayJob: function() { // HERE we define METHOd FOR james object
+        console.log("Hi, I work as a "  + this.job); // use + to join
+	// this .job wil always reffer to value : programmer , until is changed!
+    }
+};
+
+====Using "this" Keyword====================
+
+
+It turns out we can make a method work for many objects using a new keyword, this. The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
+===
+// here we define our method using "this", before we even introduce bob
+var setAge = function (newAge) {
+  this.age = newAge;
+};
+ By using the keyword this, setAge will change the age property of any object that calls it.
+// now we make bob
+var bob = new Object();
+bob.age = 30;
+// and down here we just use the method we already made
+bob.setAge = setAge;
+// change bob's age to 50 here
+bob.setAge(50);
+
+Great! Now we can take advantage of the fact that the method setAge is not limited to a single object bob—we can reuse the same method for different objects! This allows us to avoid typing out a custom method each time. All because we used the placeholder this
+
+var susan = newObject();
+susan.age = 25;
+susan.setAge = setAge;
+
+susan.setAge(35);
+===end
+Note we have used the keyword this. this is still a placeholder, but in this scenario, this can only ever refer to rectangle because we defined setHeight to be explicitly part of rectangle by defining it as rectangle.setHeight.
+===
+var rectangle = new Object();
+rectangle.height = 3;
+rectangle.width = 4;
+// here is our method to set the height
+rectangle.setHeight = function (newHeight) {
+  this.height = newHeight;
+};
+// help by finishing this method
+rectangle.setWidth = function(newWidth){
+this.width = newWidth;
+};
+// here change the width to 8 and height to 6 using our new methods
+rectangle.setHeight(6);
+rectangle.setWidth(8);
+===ANOTHER EXAMPLE OF METHOD
+var square = new Object();
+square.sideLength = 6;
+square.calcPerimeter = function() {
+  return this.sideLength * 4;
+};
+// help us define an area method here
+square.calcArea = function(){
+    return this.sideLength * this.sideLength;    
+};
+
+var p = square.calcPerimeter();
+var a = square.calcArea();
+
+CLASS
+=MORE ON Constructor OBJECTS/Method=========
+Constructor ("Reverse function/this/ NEW/ method")
+When you make a constructor, you are in fact defining a new class
+we can make our own constructors which have properties.
+===THis is actually a class
+function Person(name,age) {
+  this.name = name;
+  this.age = age;
+}
+in this case bob and susan are two separate objects, but both belong to the class Person.
+
+// Let's make bob and susan again, using our constructor/CLASS
+var bob = new Person("Bob Smith", 30); // USING keyword NEW HERE!!!
+var susan = new Person("Susan Jordan", 25);
+// help us make george, whose name is "George Washington" and age is 275
+var george = new Person("George Washington",275);
+===============================================
+Why is this Cat constructor so cool? It means if we have many cats and wanted to create an object for each cat, we could just use this constructor with the properties already defined.
+
+function Cat(age, color) {
+  this.age = age;
+  this.color = color;
+}
+var labrador = new Cat(10,"blue");
+// make a Dog constructor here
+function Dog(name,breed){
+    this.name = name;
+    this.breed = breed;
+}
+******* CUSTOMIZING CONSTRUCTORS
+// 3 lines required to make harry_potter (STANDARD OBJECT)
+var harry_potter = new Object();
+harry_potter.pages = 350;
+harry_potter.author = "J.K. Rowling";
+// A custom constructor for book
+function Book (pages, author) {
+    this.pages = pages;
+    this.author = author;
+}
+// Use our new constructor to make the_hobbit in one line
+var the_hobbit = new Book(320, "J.R.R. Tolkien");
+==========Arrays of OBJECTS======
+// Our person constructor
+function Person (name, age) {
+    this.name = name;
+    this.age = age;
+}
+// Now we can make an array of people
+var family = new Array();
+family[0] = new Person("alice", 40);
+family[1] = new Person("bob", 42);
+family[2] = new Person("michelle", 8);
+family[3] = new Person("timmy", 6);
+===outuput
+{"name":"timmy","age":6}
+********New example*****************
+// Our Person constructor
+function Person(name, age){
+    this.name=name;
+    this.age=age;
+}
+// Now we can make an array of people
+var family = new Array();
+family[0] = new Person("alice",40);
+family[1] = new Person("bob",42);
+family[2] = new Person("michelle",8);
+family[3] = new Person("timmy",6);
+// loop through our new array
+for(var x in family){
+    console.log(family[x].name); // this one is yust for names.
+    // console log(family[x])      to list all properties!
+}
+==output
+alice
+bob
+michelle
+timmy
+==========================================================
+More constructor OBject/Method 2 
+Constructor reverse function/fixed parameter
+
+In a constructor, we don't have to define all the properties using parameters. Look at our new Person example on line 1, and see how we set the species to be "Homo Sapiens" 
+ This means that when we create any Person, their species will be "Homo Sapiens". In this way, the values associated with name and age are not yet assigned, but species will always have the same value. 
+In this case, both sally and holden will have the same species of "Homo Sapiens", which makes sense because that is the same across all people.
+====
+function Person(name,age) {
+  this.name = name;
+  this.age = age;
+  this.species = "Homo Sapiens";
+}
+
+var sally = new Person("Sally Bowles",39);
+
+AS soon we asighn sally to the person object it replaces this keyword wich was yust a placeholder.
+
+var holden = new Person("Holden Caulfield",16);
+console.log("sally's species is " + sally.species + " and she is " + sally.age );
+console.log("holden's species is " + holden.species + " and he is " + holden.age);
+========
+More constructor OBject/Method 3 
+Constructorreverse func/ method inside ..
+
+function Rectangle(height, width) {
+  this.height = height;       // "this" enables us to use any OBJECT later to use height and width 					parameters
+  this.width = width;
+
+  this.calcArea = function() {
+      return this.height * this.width;
+  };
+  
+  this.calcPerimeter = function(){
+      return (this.height*2) + (this.width*2);
+  };
+}
+var rex = new Rectangle(7,3); // Here we again use keyword NEW!! /creating new recktangle
+var area = rex.calcArea(); 
+// applaying rex parameteres on calcArea method
+var perimeter = rex.calcPerimeter();
+===========================================
+function Rabbit(adjective) {
+    this.adjective = adjective;
+    this.describeMyself = function() {
+        console.log("I am a " + this.adjective + " rabbit");
+    };
+}
+var rabbit1 = new Rabbit("fluffy"); //fluffy is an adjective.
+var rabbit2 = new Rabbit("happy");
+var rabbit3 = new Rabbit("sleepy");
+rabbit1.describeMyself("fluffy");
+rabbit2.describeMyself("happy");
+rabbit3.describeMyself("sleppy");
+===output
+I am a fluffy rabbit
+I am a happy rabbit
+I am a sleepy rabbit
+
+=========Pasing Object into Functions =================
+// Our person constructor
+function Person (name, age) {
+    this.name = name;
+    this.age = age;
+}
+// We can make a function which takes persons as arguments
+// This one computes the difference in ages between two people
+var ageDifference = function(person1, person2) {
+    return person1.age - person2.age;
+}
+var alice = new Person("Alice", 30);
+var billy = new Person("Billy", 25);
+// get the difference in age between alice and billy using our function
+var diff = ageDifference(alice, billy);
+********************************************************
+YUST SOME OBJECT RELATED PRACTICE
+********************************************************
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+var mary = {
+    firstName : "Mary",
+    lastName : "Johnson",
+    phoneNumber : "(650) 888-888",
+    email : "mary.johnson@example.com"
+};
+ var contacts = new Array();
+ contacts[0] = bob;
+ contacts[1] = mary;
+ console.log(contacts[1].phoneNumber);
+===
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+var printPerson = function(person){
+    console.log(person.firstName +" "+ person.lastName);
+};
+printPerson(contacts[0]);
+printPerson(contacts[1]);
+======================
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+var list = function(){
+    var contactsLength = contacts.length;
+    for(contactsLength = 0; contactsLength < 2; contactsLength++){
+        printPerson(contacts[contactsLength]);
+    }
+};
+list();
+***********************
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+function list() {
+	var contactsLength = contacts.length;
+	for (var i = 0; i < contactsLength; i++) {
+		printPerson(contacts[i]);
+	}
+}
+var search = function(lastName){
+    var x = contacts.length;
+    for(x=0;x<2;x++){
+        if(lastName === contacts[x].lastName){ // Here we search all contacts last names
+            printPerson(contacts[x]); // if we get a match its get printed out
+        }
+    }
+};
+search("Jones");
+********************
+FINAL WERSION:
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+function list() {
+	var contactsLength = contacts.length;
+	for (var i = 0; i < contactsLength; i++) {
+		printPerson(contacts[i]);
+	}
+}
+/*Create a search function
+then call it passing "Jones"*/
+var search = function(lastName){
+    var x = contacts.length;
+    for(x=0;x<2;x++){
+        if(lastName === contacts[x].lastName){
+            printPerson(contacts[x]);
+        }
+    }
+};
+this shit here adds to the ARRAY
+
+var add = function(firstName,lastName,email,phoneNumber){
+    contacts[contacts.length] = { // this shit here adds to the ARRAY
+    firstName:firstName,
+    lastName:lastName,
+    email:email,
+    phoneNumber:phoneNumber
+    };
+};
+add("Goran", "Fundak", "g@gmail.com", 682445);
+====================================
+CLASSES / Constructors / Methods / Prototype
+o we know that a class will have certain properties and methods, but what keeps track of what a given class can or can't do? What a class has or doesn't have? That is the job of the prototype. 
+
+JavaScript automatically defines the prototype for class with a constructor. For example, our Dog constructor ensures that the Dog prototype has a breed property. Remember, the Dog prototype keeps track of what Dog has, doesn't have, can, or can't do.
+CLASS or so called CONSTRUCTOR
+function Dog (breed) {   // Dog property is  (breed) 
+  this.breed = breed;         // Dog constructor  
+}
+
+We know we can add methods to objects, and in line 7 we add the bark method to buddy. Hit run and you will see one "Woof" printed when buddy barks. Notice what happens when we try to get snoopy to bark in line 17 though. Even though snoopy is of the class Dog, he doesn't know how to bark because only buddy had bark added as a method.
+OBJECT
+var buddy = new Dog("Golden Retriever"); // making a new object
+METHOD
+buddy.bark = function() {            // making a new METHOD for object buddy
+  console.log("Woof");
+};
+buddy.bark();
+
+var snoopy = new Dog("Beagle");
+snoopy.bark = function(){    //INPORTANT we had to make new method here
+    console.log("Auuuu");       // for our snoopy object! 
+                                                         //snoopy can't use buddys           method!!
+};
+snoopy.bark();
+==============================================================
+Classes are very important in object-oriented programming. This is because a class tells us helpful information about objects, and you can think of an object as a particular instance of a class. 
+
+For example, look at our Person class again in the console. We know that any Person will have a name and age, because they are in the constructor. This allows us to create a function like printPersonName, which will take a Person as an argument and print out their name. We know the function will work on any Person, because name is a valid property for that class.
+
+function Person(name,age) {    //CLASS
+  this.name = name;
+  this.age = age;
+}
+In JavaScript all properties of an object are automatically public. Public means that they can be accessed outside the class. 
+
+var printPersonName = function (p) {      //Method /function
+  console.log(p.name);                               //Method using Person name
+};
+
+var bob = new Person("Bob Smith", 30);  // new OBject
+printPersonName(bob);                           //Using method (bob.name)
+
+var me = new Person("Goran", 28);
+printPersonName(me);
+======================================================================
+POWER OF PROTOTYPES
+Here we have very similar code as last time, but there is an important difference. Instead of using buddy.bark to add the bark method to just the buddy object, we use Dog.prototype.bark. 
+
+Click run this time, and both buddy and snoopy can bark just fine! Snoopy can bark too even though we haven't added a bark method to that object. How is this so? Because we have now changed the prototype for the class Dog. This immediately teaches all Dogs the new method.
+
+In general, if you want to add a method to a class such that all members of the class can use it, we use the following syntax to extend the prototype:
+className.prototype.newMethod = function() {
+statements;
+};
+
+===
+function Dog (breed) {     //class Dog
+  this.breed = breed;
+}
+
+// here we make buddy and teach him how to bark
+
+var buddy = new Dog("golden Retriever");   // making new object
+
+Dog.prototype.bark = function() {  // Changing prototype for class Dog
+  console.log("Woof");
+};
+buddy.bark();
+
+// here we make snoopy
+var snoopy = new Dog("Beagle");
+/// this time it works! NOP NEED FOR MAKING INDIVIDUAL NEW METHOD
+snoopy.bark();
+=========== PROTOTYPES second example:
+
+Add a meow method to the Cat prototype so that all cats can now meow. This method should print to the console "Meow!". Then call this method for each cat.
+==
+function Cat(name, breed) {     //Class Cat
+    this.name = name;
+    this.breed = breed;
+}
+
+// let's make some cats!
+var cheshire = new Cat("Cheshire Cat", "British Shorthair");
+var gary = new Cat("Gary", "Domestic Shorthair");
+
+// add a method "meow" to the Cat class that will allow
+// all cats to print "Meow!" to the console
+Cat.prototype.meow = function(){ // meow is a method
+    console.log("Meow!");
+};
+
+// add code here to make the cats meow!
+cheshire.meow();   //calling metod on new cats
+gary.meow();
+===========GOOD CLASS exampls
+function Animal(name, numLegs){
+    this.name = name;
+    this.numLegs = numLegs;
+}
+
+// create the sayName method for Animal
+Animal.prototype.sayName = function(){
+    console.log("Hi my name is "+ this.name);
+};
+
+// provided code to test above constructor and method
+var penguin = new Animal("Captain Cook", 2);
+penguin.sayName();
+=====================================
+CLASS
+function Animal(name, numLegs) {
+    this.name = name;
+    this.numLegs = numLegs;
+}
+PROTOTYPE 
+Animal.prototype.sayName = function() {
+    console.log("Hi my name is " + this.name);
+};
+
+
+// create a Penguin constructor here  //CLASS 2
+function Penguin(name, numLegs){
+    this.name = name;
+    this.numLegs = numLegs;
+}
+METHOD
+// create a sayName method for Penguins here
+Penguin.prototype.sayName = function(){
+    console.log("Hi my name is " + this.name);
+};
+
+// our test code
+var theCaptain = new Penguin("Captain Cook", 2);
+theCaptain.sayName();
+===============
+function Dog (breed) {
+    this.breed = breed;
+};
+Dog.prototype.sayHello = function(){   //seting prototype so all dogs can bark
+    console.log("Hello this is " +[breed]+"dog");
+};
+// add the sayHello method to the Dog class 
+// so all dogs now can say hello
+
+
+var yourDog = new Dog("golden retriever");
+yourDog.sayHello();
+
+var myDog = new Dog("dachshund");
+myDog.sayHello();
+CLASS INHERITENCE 
+/ the original Animal class and sayName method
+//CLASS 1
+function Animal(name, numLegs) {
+    this.name = name;
+    this.numLegs = numLegs;
+}
+//PROTOTYPE 1
+Animal.prototype.sayName = function() {
+    console.log("Hi my name is " + this.name);
+};
+
+// define a Penguin class
+//CLASS 2
+function Penguin(name){
+    this.numLegs = 2;
+}
+// set its prototype to be a new instance of Animal
+This means that Penguin inherits properties and methods from Animal.
+//PROTOTYPE 2
+Penguin.prototype = new Animal();
+var penguin = new Penguin("fluffy");
+
+penguin.sayName(); --- > inherited form animal / using method from Animal class!!!
+
+=== Anothe INHERIT
+function Penguin(name) {
+    this.name = name;
+    this.numLegs = 2;
+}
+
+// create your Emperor class here and make it inherit from Penguin
+function Emperor(name){
+    this.name = name;
+}
+Emperor.prototype = new Penguin();  //Setting inheritence here
+var emperor = new Emperor("dick"); // Making new OBJECT
+console.log(emperor.numLegs); // Printing inherited value
+
+=== INHERITANCE CHAIN
+// original classes
+function Animal(name, numLegs) {
+    this.name = name;
+    this.numLegs = numLegs;
+    this.isAlive = true;
+}
+function Penguin(name) {
+    this.name = name;
+    this.numLegs = 2;
+}
+function Emperor(name) {
+    this.name = name;
+    this.saying = "Waddle waddle";
+}
+
+// set up the prototype chain!!!   COOL! we conect them all
+Penguin.prototype = new Animal();
+Emperor.prototype = new Penguin();
+
+var myEmperor = new Emperor("Jules"); // making new object from botom of chain
+
+console.log(myEmperor.saying); // should print "Waddle waddle"
+console.log(myEmperor.numLegs); // should print 2
+console.log(myEmperor.isAlive); // should print true
+===
+In JavaScript all properties of an object are automatically public. Public means that they can be accessed outside the class. 
+
+function Person(first,last,age) {
+   this.firstName = first;
+   this.lastName = last;
+   this.age = age;
+}
+
+var john = new Person('John','Smith',30);
+var myFirst = john.firstName;
+var myLast = john.lastName;
+var myAge = john.age;
+===
+CLASS PRIVATE PROPERTIES
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;   //By using var we meke it PRIVATE
+}
+// create your Person 
+var john = new Person("John", "McDonald", 33);
+// try to print his bankBalance
+console.log(john.bankBalance); //DOESNT WORK BECOUSE IS PRIVATE
+====
+WAY  TO ACCESS PRIVATE VARIABLE WITHIN CLASS :
+
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500; //PRIVATE
+  
+   this.getBalance = function() {  // TRICK TO ACCES PRIVATE PROPERTY IS TO MAKE METHOD 
+      
+      return bankBalance;
+   };
+}
+var john = new Person('John','Smith',30); // New OBJECT
+
+var myBalance = john.getBalance(); //Assighn new variable to a METHOD above
+console.log(myBalance);
+
+=====WAY  TO ACCESS PRIVATE METHOD WITHIN CLASS 
+
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;
+   var returnBalance = function() { //PRIVATE METHOD
+      return bankBalance;
+   };
+   // create the new function here // WE ACCES PRIVATE METHOD BY MAKIN PUBLIC ONE
+
+   this.askTeller = function(){   // BY USINH THIS WE MAKE IT PUBLIC
+       return returnBalance;   //LOOK HERE NO PARANTHESEZ () BECOUSE WE CALL METHOD NOT VALUE
+   };
+       
+}
+var john = new Person('John','Smith',30);
+
+var myBalanceMethod = john.askTeller();
+var myBalance = myBalanceMethod();
+console.log(myBalance);
+===================================
+USING PASSWORD COOL!
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;   //PRIVATE VARIABLE 
+  
+   this.askTeller = function(pass) {     //MAKING METHOD       
+     if (pass == 1234) return bankBalance;
+     else return "Wrong password.";
+   };
+}
+
+var john = new Person('John','Smith',30); // NEW objecT
+
+var myBalance = john.askTeller(1234);
+===============cash register =====================================
+function StaffMember(name,discountPercent){
+    this.name = name;
+    this.discountPercent = discountPercent;
+}
+
+var sally = new StaffMember("Sally",5);
+var bob = new StaffMember("Bob",10);
+
+// Create yourself again as 'me' with a staff discount of 20%
+var me = new StaffMember("Gogo", 20);
+
+var cashRegister = {
+    total:0,
+    lastTransactionAmount: 0,
+    add: function(itemCost){
+        this.total += (itemCost || 0);
+        this.lastTransactionAmount = itemCost;
+    },
+    scan: function(item,quantity){
+        switch (item){
+        case "eggs": this.add(0.98 * quantity); break;
+        case "milk": this.add(1.23 * quantity); break;
+        case "magazine": this.add(4.99 * quantity); break;
+        case "chocolate": this.add(0.45 * quantity); break;
+        }
+        return true;
+    },
+    voidLastTransaction : function(){
+        this.total -= this.lastTransactionAmount;
+        this.lastTransactionAmount = 0;
+    },
+    // Create a new method applyStaffDiscount here
+    applyStaffDiscount: function(employee){
+       this.total -= this.total * (employee.discountPercent / 100);
+    }
+    
+};
+
+cashRegister.scan('eggs',1);
+cashRegister.scan('milk',1);
+cashRegister.scan('magazine',3);
+// Apply your staff discount by passing the 'me' object 
+// to applyStaffDiscount
+cashRegister.applyStaffDiscount(me);
+
+// Show the total bill
+console.log('Your bill is '+cashRegister.total.toFixed(2));
+==================================================
+SOME jQuery
+============
+ADDING jQuery to HTML INPORTANT
+You need to explicitly load jQuery in your HTML page. jQuery is a custom framework, and not available in browsers by default.
+!DOCTYPE html>
+<html>
+<head>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> // this way !!
+    <script type="text/javascript" src="script.js"></script>
+
+===========
+
+.hide()
+.click()
+.dblclick()
+.mouseenter()
+.mouseleave()
+.fadeTo()
+.fadeOut()
+.fadeIn()
+.slideToggle()
+
+.append()   //$(".info").append("<p>Stuff!</p>");
+.prepend()  //$(".info").prepend("<p>Stuff!</p>");
+.appendTo() //$('<p>Stuff!</p>').appendTo('.info'); reverses the order 
+
+.before()
+.after()
+.empty()   //deletes an element's content and all its descendants
+.remove() //not only deletes an element's content, but deletes the element itself.
+$('p').remove();
+
+.addClass()
+.removeClass()
+.toggleClass()
+
+.effect()
+.effect('explode')
+.resizable() // $('div').resizable()
+.selectable()
+.sortable()
+.accordion()
+=====
+syntax
+
+<script style="text/javascript" src="script.js">
+$(document).ready(function(){   document refers to HTML / ready means when page                                              is ready
+$("div").slideDown("slow");    points to div  / slideDown is an function
+});
+==
+$(document).ready(function(){
+    $("div").mouseenter(function(){
+        $("div").fadeTo("fast",1);
+    });
+});
+===$####
+$(document).ready(function(){
+    
+    $("div").mouseenter(function(){
+        $("div").fadeTo("fast",1);
+    });
+    $("div").mouseleave(function(){
+        $("div").fadeTo("fast", 0.5);
+    });
+});
+==
+$(document).ready(function() {
+    $('div').click(function() {
+        $('div').fadeOut('slow');
+    });
+});
+====
+
+$(document).ready(function() {
+    var $target=$("#4"); asining id #4 to a variable
+    $target.fadeOut('fast');
+});
+=========
+$(document).ready(function() {
+    $('button').click(function() {
+        $('.vanish').fadeOut('slow');
+    });
+});
+===
+$('p, li').fadeTo('slow', 0); it goes all in same $(".p,.test ") ...
+
+==Cool example this keyword
+ REFERS ONLY ON ONE DIV AND DOES NOT AFFECT ALL OF THEM>
+ONLY DIV IS AFECTED WHERE THE MOUSE IS< REST STAY UNCHANGED!
+$(document).ready(function() {
+    $('div').click(function() {
+        $(this).fadeOut('slow');
+    });
+});
+===
+$(document).ready(function(){
+    $('body').append("<p>I'm a paragraph!</p>");
+});'
+
+=============
+ADDING ELEMENTS TO DOM
+syntax":
+$('target').after('<tag>To add</tag>');
+example:
+$(document).ready(function(){
+    $("#one").after("<p>I add this in the middle</p>");
+});
+===
+$(document).ready(function(){
+    $("#one").after("<p>I add this inth middle</p>");
+    var $myTag = $("p"); // asighn variable to paragraf
+    $("#two").after($myTag);//we move it again
+});
+==================
+ADDING CLASS / REMOVING CLASS
+.removeClass()
+.addClass()
+
+$(document).ready(function(){
+    $('#text').addClass('highlighted'); //WE DO NOT NEED TO ADD . or # in this function!                                        // highlited  can be class or # id
+});
+====================
+STYLE CHANGES WITH jQuery
+  $("div").height("100px");
+  $("div").width("50px");
+
+ $("div").css("background-color","#008800");//general purpose 
+==
+$(document).ready(function(){
+    $('div').height('200px');
+    $('div').width('200px');
+    $('div').css('border-radius','10px');
+});
+===================
+MODIFYING CONTENT .html / .val
+$('div').html();//will get the HTML contents of the first div it finds
+$('p').html("I love jQuery!");//will set the contents of the first paragraf it finds to "I love jQuery!"
+
+.val() is used to get the value of form elements. For example,
+$('input:checkbox:checked').val();
+===================
+GRABING VALUE FROM FORM/INPUT
+html:
+<body>
+		<form name="checkListForm">
+			<input type="text" name="checkListItem"/>
+		</form>
+		<div id="button">Add!</div>
+</body>
+
+jQuery:
+
+$(document).ready(function(){
+    $('#button').click(function(){//making clik event
+        var toAdd = $('input[name=checkListItem]').val();//storing input text from form we made into variable toAdd
+$('.list').append(//displaying grabbed results
+        '<div class="item">' 
+        + toAdd + 
+        '</div>');
+    });
+});
+==================
+EVENT HANDLER .on()
+You can think of .on() as a general handler that takes the event, its selector, and an action as inputs.
+syntax:
+$(document).on('event', 'selector', function() {
+    Do something!
+});
+$(document).on('click','.item',function(){// event : click  /selector: class .item / function remove() + this keyword
+        $(this).remove();    
+    });
+====================
+.focus()!
+The .focus() event handler only works on elements that can receive focus—the list of these elements is a bit vague, but HTML elements like <textarea>s and <input>s are the usual suspects.
+<body>
+		
+<form>
+			
+	Name: <input type='text' name='name'></input>
+		
+</form>
+	
+</body>
+$(document).ready(function(){
+    
+	$('input').focus(function(){
+        
+		$(this).css('outline-color','#FF0000');
+    
+	})
+;
+});
+=======================
+.keydown()
+The .animate() effect takes two inputs: 
+the animation to perform,
+ and the time in which to perform the animation. 
+
+$(document).ready(function(){
+    
+	$(document).keydown(function(){
+       //we select whole document and we call keydown() on it
+		$('div').animate({left:'+=10px'},500);
+   //then we inside keydown call animate 
+	});
+
+});
+=============
+.effect() 
+EFFECTS ON UI
+.effect('explode')
+$('div').effect('bounce',{times:3},500);
+$('div').effect('slide');
+=
+$(document).ready(function(){
+    
+	$('div').click(function(){
+        
+		$('div').effect('explode');
+    
+	});
+
+});
+============
+RESIZE
+$(document).ready(function(){
+    $('div').resizable();
+});
+==============
+
+

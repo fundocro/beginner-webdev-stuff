@@ -1,0 +1,77 @@
+﻿html{
+	background:black;
+}
+.nav-tabs{
+	border-bottom:1px solid white;
+	height:80px;
+	background-image:url('img/blodblack.jpg');
+}
+.nav-tabs li{
+	margin-left:10px;
+}
+.nav-tabs i:hover{
+	padding-top:10px;
+	color:white;
+	border-bottom:2px solid red;
+}
+.nav-tabs i{
+    font-size: 1.5em;
+	color:silver;
+}
+
+#header{
+ 	height:555px;
+	background-position:center;
+	background-size:cover;                         
+	background-repeat: no-repeat;
+	background-image:url('img/bw1.jpg');
+	border-bottom:1px solid black;		
+}
+#header p{
+	margin-top:320px;
+	font-size:24px;
+	color:gray;    
+	float: left; 
+    position: relative;
+    -moz-transform: rotate(-5deg);  /* FF3.5+ */        
+    -o-transform: rotate(-5deg);  /* Opera 10.5 */   
+    -webkit-transform: rotate(-15deg);  /* Saf3.1+, Chrome */              
+    filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=6);  /* IE6,IE7 */          
+    -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6); /* IE8 */
+}
+#history p{
+	margin-top:30px;
+	font-family:"Comic Sans MS","Times New Roman", Times, serif;
+}
+#history, #jokes, #pictures, #advice, #contact{
+ margin-top:15px;	
+ border-top:1px solid black;
+ border-bottom:1px solid black;
+
+}
+#history, #jokes, #pictures, #advice, #contact {
+	font-size:large;
+	color:gray;
+}
+#history,#jokes,#advice{
+	height:400px;
+}
+#jokes p{
+	color:#6AA625;
+}
+#pictures{
+	height:600px;
+}
+#contact{
+	height:250px;
+	background:black;
+}
+#contact i{	 
+	margin-top:25px;
+	color:white;
+}
+.fa-home{
+	background-color:transparent;
+	color:black;
+	text-decoration:none;
+}

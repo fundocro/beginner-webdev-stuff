@@ -1,0 +1,511 @@
+CSS BASIC REMINDER
+
+======================================
+TARGETING DIFERENT BROWSER CSS STYLE
+ <style type='text/css'>
+/*This will work for chrome */
+                    #categoryBackNextButtons
+                    {
+                        width:490px;
+                    }
+
+/*This will work for firefox*/
+                    @-moz-document url-prefix() {
+                        #categoryBackNextButtons{
+                        width:486px;
+                    }
+                    }
+                </style>
+
+                <!--[if IE]>
+/*This will work for IE*/
+                <style type='text/css'>
+
+                #categoryBackNextButtons
+                {
+                    width:486px;
+                }
+                </style>
+                <![endif]-->
+
+For firefox:
+if you use yust url-prefix() as it is with nothing in paranthesiz then it will target local html file 
+
+Some other examples for firefox:
+<style  type="text/css">
+ @-moz-document url(http://www.w3.org/),
+                   url-prefix(http://www.w3.org/Style/),
+                   domain(mozilla.org)
+    {
+      /* CSS rules here apply to:
+         + The page "http://www.w3.org/".
+         + Any page whose URL begins with "http://www.w3.org/Style/"
+         + Any page whose URL's host is "mozilla.org" or ends with
+           ".mozilla.org"
+       */
+
+      /* make the above-mentioned pages really ugly */
+      body { color: purple; background: yellow; }
+}
+</style>
+
+======================================
+Internal Stylesheet
+
+<head>
+ <title><title>
+ <style type=”text/css”>
+	CSS Content Goes Here
+ </style>
+ </head>
+ <body>
+
+External Stylesheet
+
+<link rel=”stylesheet” type=”text/css” href=“Path To stylesheet.css” />
+
+Inline Styles
+
+<p style=”color: #ff0000; font-size:20px;”>Some red text</p>
+
+Text Align
+
+ text-align: value;
+left
+right
+center
+justify
+
+Text Decoration
+ text-decoration: value;
+
+Possible values are
+none
+underline
+overline
+line through
+blink
+
+Text Transform
+
+You can control the size of letters in an (X)HTML element with the following:
+
+  text-transform: value;
+
+Possible values are
+none
+capitalize
+lowercase
+uppercase
+
+LINKS/Pseudo Class
+a:link {color: #009900;}
+ a:visited {color: #999999;}
+ a:hover {color: #333333;}
+ a:focus {color: #333333;}
+ a:active {color: #009900;}
+
+<a class=”column” href=”” title=””>some link text</a>
+
+.column a:link {color: #009900;}
+
+BACKGROUND
+background: #ffffff url(path_to_image) top left no-repeat fixed;
+attachment
+color
+image
+position
+repeat
+
+background-attachment: value;   /fixed/scroll
+background-color: value;
+background-image: url(path_to_image);
+background-position: value;
+background-repeat: value;
+
+BORDER
+border: 1px solid #333333;
+
+Values:
+color
+style
+width
+border-color: value;
+border-style: value;
+
+Values:
+dashed
+dotted
+double
+groove
+hidden
+inset
+none
+outset
+ridge
+solid
+border-width: value;
+
+Values:
+Length
+Thin
+Medium
+Thick
+border-bottom-color: value;
+border-bottom-style: value;
+border-top: 1px solid #333333;
+border-bottom: 1px solid #333333;
+border-left: 1px solid #333333;
+border-right: 1px solid #333333;
+
+LISTS
+
+
+Values:
+image
+position
+type
+
+HEIGHT/WIDTH
+height: value;
+
+Values:
+image
+position
+type
+line-height: value;
+max-height: value;
+min-height: value;
+
+width: value;
+
+Values:
+auto
+length
+percentage
+
+CSS CLASSIFICATION
+======================================
+Clear
+
+You can control if an element allows floated elements to its sides with the clear property
+
+clear: value;
+
+Values:
+none
+both
+left
+right
+
+Now, what does all that mean?
+None
+
+This is the default setting, floated elements can appear on either side of the element set to clear: none;
+Both
+
+Setting the value to both, causes no floated elements to appear on either side of the element set to clear: both;
+Left
+
+Setting the value to left, causes no floated elements to appear to the left side of the element set to clear: left;
+Right
+
+Setting the value to right, causes no floated elements to appear to the right side of the element set to clear: right;
+
+
+Clip
+
+You can control how much of an element is visible with the clip property
+
+clip: value;
+
+Values:
+auto
+shape
+
+Currently the only shape recognized by the clip property is rect (rectangle)
+
+clip: rect(10px, 10px, 10px, 10px);
+
+
+Cursor
+
+You can control the style of cursor to be used in an element with the cursor property
+
+cursor: value;
+
+Values:
+auto
+crosshair
+default
+help
+move
+pointer
+text
+url
+wait
+e-resize
+ne-resize
+nw-resize
+n-resize
+se-resize
+sw-resize
+s-resize
+w-resize
+
+If you choose to use a custom cursor, it is always a good idea to declare a generic one after the custom value.
+
+cursor: url(“image.cur”), default;
+
+
+Display
+
+You can control how an element is displayed with the display property
+
+display: value;
+
+Values:
+block
+inline
+list-item
+none
+
+
+display:block; This makes the element a block box. It won't let anything sit next to it on the page! It takes up the full width.
+
+     display:inline-block; This makes the element a block box, but will allow other elements to sit next to it on the same line.
+
+     display:inline; This makes the element sit on the same line as another element, but without formatting it like a block. It only takes up as much width as it needs (not the whole line).
+
+
+
+Float
+
+The float property changes how text and or images within an element are displayed
+
+float: value;
+
+Values:
+left
+right
+none
+
+Now, what does all that mean?
+Left
+
+The image/text is displayed to the left of the parent element
+Right
+
+The image/text is displayed to the right of the parent element
+None
+
+There is no change in the way the image/text is displayed
+
+
+Overflow
+
+You can control what an elements contents will do if it overflows it boundaries with the overflow property
+
+overflow: value;
+
+Values:
+auto
+hidden
+visible
+scroll
+Overflow Example
+
+
+As you can see, with this property you can mimic an iframe. This box is set to an overflow value of “auto”. Meaning that if the contents of the element break the boundaries it should add a scrollbar.
+
+If it we’re set to an overflow value of “scroll”, horizontal and vertical scrollbars would appear no matter what.
+
+If it we’re set to an overflow value of “hidden”, the contents would be clipped at the boundary and no scrollbar would appear.
+
+If it we’re set to an overflow value of “visible”, the contents would expand past the boundaries and no scrollbar would appear.
+
+
+Here is what I have in my CSS file.
+
+#overflow_box {width:200px; height:200px; border-top: 1px solid #eee; border-left: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px; overflow: auto;}
+
+Then in the (X)HTML file I have this:
+
+<div id=”overflow_box”>Contents</div>
+
+
+Visibility
+
+You can control if an element is visible or not with the visibility property
+
+visibility: value;
+
+Values:
+hidden
+visible
+
+
+Z-Index
+
+You can control the layer order of positioned elements with the z-index property
+
+z-index: value;
+
+Values:
+auto
+number
+
+The higher the number the higher the level. Negative numbers are allowed
+======================================
+
+Position
+======================================
+
+The position property (as you may have guessed) changes how elements are positioned on your webpage.
+
+position: value;
+
+Values:
+static
+relative
+absolute
+fixed
+
+Now, what does all that mean?
+Static
+
+Static positioning is by default the way an element will appear in the normal flow of your (X)HTML file. It is not necessary to declare a position of static. Doing so, is no different than not declaring it at all.
+
+position: static;
+Relative
+
+Positioning an element relatively places the element in the normal flow of your (X)HTML file and then offsets it by some amount using the properties left, right, top and bottom. This may cause the element to overlap other elements that are on the page, which of course may be the effect that is required.
+
+position: relative;
+Absolute
+
+Positioning an element absolutely, removes the element from the normal flow of your (X)HTML file, and positions it to the top left of its nearest parent element that has a position declared other than static. If no parent element with a position other than static exists then it will be positioned from the top left of the browser window.
+
+position: absolute;
+Fixed
+
+Positioning an element with the fixed value, is the same as absolute except the parent element is always the browser window. It makes no difference if the fixed element is nested inside other positioned elements.
+
+Furthermore, an element that is positioned with a fixed value, will not scroll with the document. It will remain in its position regardless of the scroll position of the page.
+
+At this time IE6 (Internet Explorer 6) does not support the fixed value for the positioning of an element. Thus it will not position fixed elements correctly and will still scroll with the page. To see this effect in action you will need to use a standards compliant browser, such as Firefox 1.0
+
+position: fixed;
+
+When positioning elements with relative, absolute or fixed values the following properties are used to offset the element:
+top
+left
+right
+bottom
+
+position: absolute; top: 10px; right: 10px;
+======================================
+
+MARGINS
+======================================
+the margin property declares the margin between an (X)HTML element and the elements around it.
+
+  margin-top: length percentage or auto; 
+  margin-left: length percentage or auto;
+  margin-right: length percentage or auto;
+  margin-bottom: length percentage or auto;
+
+As you can also see in the above example you have 3 choices of values for the margin property
+length
+percentage
+auto
+
+You can also declare all the margins of an element in a single property as follows:
+
+  margin: 10px 10px 10px 10px;
+
+If you declare all 4 values as I have above, the order is as follows:
+top
+right
+bottom
+left
+
+If only one value is declared, it sets the margin on all sides. (see below)
+
+  margin: 10px;
+
+If you only declare two or three values, the undeclared values are taken from the opposing side. (see below)
+
+  margin: 10px 10px; /* 2 values */
+  margin: 10px 10px 10px; /* 3 values */
+
+You can set the margin property to negative values. If you do not declare the margin value of an element, the margin is 0 (zero).
+
+  margin: -10px; 
+
+Elements like paragraphs have default margins in some browsers, to combat this set the margin to 0 (zero).
+
+  p {margin: 0;}
+
+Note: You do not have to add px (pixels) or whatever units you use, if the value is 0 (zero).
+
+You can see in the example below, the elements for this site are set to be 20px (pixels) from the body
+
+body{ 
+  margin: 20px;
+  background: #eeeeee;
+  font-size: small;
+  font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+  text-align: left;
+}
+======================================
+
+PADDING
+======================================
+
+Padding is the distance between the border of an (X)HTML element and the content within it.
+
+Most of the rules for margins also apply to padding, except there is no “auto” value, and negative values cannot be declared for padding.
+
+  padding-top: length percentage; 
+  padding-left: length percentage;
+  padding-right: length percentage;
+  padding-bottom: length percentage;
+
+As you can also see in the above example you have 2 choices of values for the padding property
+length
+percentage
+
+You can also declare all the padding of an element in a single property as follows:
+
+  padding: 10px 10px 10px 10px;
+
+If you declare all 4 values as I have above, the order is as follows:
+top
+right
+bottom
+left
+
+If only one value is declared, it sets the padding on all sides. (see below)
+
+  padding: 10px;
+
+If you only declare two or three values, the undeclared values are taken from the opposing side. (see below)
+
+  padding: 10px 10px; /* 2 values */
+  padding: 10px 10px 10px; /* 3 values */
+
+If you do not declare the padding value of an element, the padding is 0 (zero).
+
+Note: You do not have to add px (pixels) or whatever units you use, if the value is 0 (zero).
+
+You can see in the example below, the main container for this site has 30px (pixels) of padding between the border and the text.
+
+#container{ 
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #666;
+  background: #ffffff;
+}
+======================================

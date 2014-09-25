@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Twitter S/O Randomizer</title>
+		<script src="jquery-1.11.1.min.js"></script> 
+	</head>
+	<body>
+		<div id="nlist">
+			<p><span style="font-size:large;font-weight:bold;margin-left:10px;color:#2A2A2A;padding-left:20px;">Twitter Followers List_S/O Randomizer</span></p>
+			<textarea id="tt"></textarea>
+		</div>
+		<textarea id="last10"></textarea>
+		<div id="point1"></div>
+		<button id="mix">RANDOMIZE</button>
+		<div id="point2"></div>
+		<!--<input id="new_flw" type="submit" value="submit" autofocus="autofocus">!-->
+		<form id="new_flw">
+		  New Follower: <input id="inp1" type="text" name="fname"/><br>
+		  <input id="inp2" type="button" value="Add"/>
+		</form>
+		<div class="so">
+			<textarea class="so1"></textarea>
+			<textarea class="so2"></textarea>
+			<textarea class="so3"></textarea>
+			<textarea class="so4"></textarea>
+		</div>
+		<!--sTyLe!-->
+		<script>
+			$('.so1,.so2,.so3,.so4').css({height:160,width:178,margin:9,color:'#999'});
+			$('.so1,.so2,.so3,.so4').css('background-color', 'transparent').css('font-weight','bold').css('font-size','14px').css('max-height','160px').css('max-width','178px');
+		</script>
+<style>
+html{background-image:url('img/sap.jpg');
+background-repeat:no-repeat;}
+#nlist{float:left;height:auto;width:350px;margin:10px 0px 10px 5px;padding:5px 0 0 25px;}
+#tt{height:300px;max-height:300px;width:640px;max-width:640px;font-size:x-large;font-weight:bold;margin:0px 10px 0px 0px;padding:20px;padding-right:25px;color:#484848;background-color:transparent;}
+#point1{float:right;background-image:url('img/rnds1.png');
+height:90px;width:200px;margin:150px 0 0 10px;background-color:transparent;}
+#point2{float:right;background-image:url('img/rnds2.png');
+height:80px;width:650px;margin-top:-10px;margin-right:142px;background-color:transparent;}
+#last10{float:right;margin:90px 10px 0 10px;height:160px;width:300px;max-height:260px;max-width:300px;padding:20px 10px 0px 10px;font-size:large;font-weight:bold;text-align:left;color:#999;background-color:transparent;}
+#mix {float:left;clear:left;height:auto;margin:5px 0 0 50px;padding:8px;width:100px;background-color:transparent;}
+#new_flw{float:left;clear:left;margin:10px 0 0 120px;color:#000;font-size:large;font-family:Comic Sans MS, Helvetica, sans-serif;width:30%;background-color:transparent;}
+#inp1{width:80%;margin:10px 0 0 2px;}
+#inp2{float:left;clear:left;height: auto;margin:20px 0 0 180px;padding:8px;width:100px;background-color:transparent;}
+.so{float:right;height:180px;width:820px;margin-top:-120px;margin-left:300px;}
+</style>
+      	<!--sTyLe eNd!-->
+		<script>
+			$(document).ready(function(){
+				var db = openDatabase("Twitter","1.0","Twitter followers","200000");
+			    var names = new Array('@loveBlue23','@WoahIsBree','@BowlerChloe','@EanTobiason','@BigBootyRanta','@kel_ari2','@GingerLeeanne','@icrackuriphone','@Jesie_Lastkings','@EMILYHOLLYWOOD_','@Maya_bharathi','@LoloTomlinson3','@HannahMatsuya','@RaDaKid_','@MonaNavy07','@MGWVsx_','@Anata_GA_suki20','@xNotForKiiidsx','@_FollowForFollo','@AntonRubiano','@obey_shane','@TrapDumbThots','@MJaySmithNC','@Rajsh92','@katyper12345678','@Marijuanallama','@DmndRene','@laini_missloyal','@leblcla','@KelnieYonso','@JBear1979','@RETWUITERO','@JuliaMontenegr_','@ellacrezelle','@OPUWarks','@Gzis_SpiF','@ClaraVillanii','@X0____','@_SoullessBitchh','@xAlexander9x','@iLedia_','@camdallas212','@FasterThan5G','@RetweetnFollows','@Bjimages');
+			    function L10(){
+			    	fc=names.length;
+			    	$('#last10').text(
+			    		'Number of followers: '+fc+'       '+
+			    		'Last 12 followers:       '+names.slice(-12)
+			    	);
+			    }
+			    L10();	
+			    function store(){
+					x = document.getElementById('inp1').value;
+					names.push(x);
+					L10();
+					$('#tt').text(names);
+				}
+			    function shuffleArray(array) {
+				    for (var i = array.length - 1; i > 0; i--){
+				        var j = Math.floor(Math.random() * (i + 1));
+				        var temp = array[i];
+				        array[i] = array[j];
+				        array[j] = temp;
+				        var sox1 = names.slice(0,5);
+				        var sox2 = names.slice(6,11);
+				        var sox3 = names.slice(12,17);
+				        var sox4 = names.slice(18,23);
+						$('.so1').text('★ S/O╔════════╗★    '+sox1+' RETWEETS IF #F4F #TFB #TeamFollowBack'+'     #Yu.™');
+						$('.so2').text('★ S/O╔════════╗★    '+sox2+' RETWEETS IF #F4F #TFB #TeamFollowBack'+'     #Yu.™');
+						$('.so3').text('★ S/O╔════════╗★    '+sox3+' RETWEETS IF #F4F #TFB #TeamFollowBack'+'     #Yu.™');
+						$('.so4').text('★ S/O╔════════╗★    '+sox4+' RETWEETS IF #F4F #TFB #TeamFollowBack'+'     #Yu.™');
+					}/*close for loop*/
+					$('#tt').text(names);
+				}/*close function  shuffleArray()*/
+				function CreateTable(){
+					db.transaction(function(t){
+						t.executeSql('CREATE TABLE IF NOT EXISTS Followers (id INTEGER ,fName TEXT)');
+					});	
+				} 
+				CreateTable();
+				function Insert(){
+					db.transaction(function(t){
+						//t.executeSql('INSERT INTO Followers(fNAME) VALUES (?)',[x]);
+						//t.executeSql('INSERT INTO Followers(id) VALUES (?)',[fc]);
+						t.executeSql('INSERT INTO Followers(id,fNAME) VALUES (?,?)',[fc,x]);
+						//t.executeSql('INSERT INTO Followers (id,fNAME) VALUES (fc,x)');
+					});
+				}		
+				shuffleArray(names);
+				
+				$('#mix').click(function(){
+					shuffleArray(names);
+					$('#tt').text(names);
+				});/*end mix click*/
+				
+				$('#inp2').click(function(){
+					// stores new follower into names array	
+					store();
+					Insert();
+					//display();
+				});	
+			});
+			
+		</script>
+	</body>
+</html>
